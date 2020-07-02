@@ -1,0 +1,23 @@
+<h3>Completed tasks</h3>
+<nz-table #basicTable [nzData]="allcompTask">
+    <thead>
+      <tr>
+        <th style="width: 15%;">Update status</th>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 40%;">Description</th>
+        <th style="width: 15%;">Repeat task</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+          <td> <label nz-checkbox [(ngModel)]="data.status" (change)="changeListener($event , data)"  >
+            {{ data.status ? 'Checked' : 'Unchecked' }} 
+          </label>
+            </td>
+        <td>{{data.name}}</td>
+        <td>{{data.description}}</td>
+        <td>{{data.repeated_task ? 'Yes' : 'No' }}</td>
+       
+      </tr>
+    </tbody>
+  </nz-table>

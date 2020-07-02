@@ -1,0 +1,29 @@
+<form nz-form [formGroup]="taskForm">
+   
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Name</nz-form-label>
+      <nz-form-control [nzSpan]="12"  nzErrorTip="Please enter Name!">
+        <input nz-input formControlName="name" placeholder="name" type="text" />
+      
+      </nz-form-control>
+    </nz-form-item>
+   
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzErrorTip="Please enter Description!">
+        <textarea formControlName="description" nz-input rows="2" placeholder="Enter description"></textarea>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Repeat Task</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Please select repeated task status!">
+
+        <nz-select ngModel="pending" formControlName="repeat_task"(ngModelChange)="changestatus($event)" >
+            <nz-option nzValue=true nzLabel="Yes"></nz-option>
+            <nz-option nzValue=false nzLabel="No"></nz-option>
+          </nz-select>
+        </nz-form-control>
+
+    </nz-form-item>
+ 
+  </form>
